@@ -1,5 +1,5 @@
 ---
-- hosts: all
+- hosts: Maven2
   tasks:
     - name: change permissions
       file:
