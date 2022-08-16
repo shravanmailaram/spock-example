@@ -1,0 +1,17 @@
+---
+- hosts: all
+  tasks:
+    - name: change permissions
+      file:
+        path: /var/lib/tomcat9
+        mode: 0777
+        recurse: yes
+        state: directory
+    - name: deploy code
+      copy:
+        src: spock-example-1.0-SNAPSHOT.jar
+        dest: /var/lib/tomcat9/webapps/spock-example-1.0-SNAPSHOT.jar
+    - name: restart tomcat service
+      service:
+        name: tomcat9
+        state: restarted 
