@@ -1,6 +1,5 @@
 ---
 - hosts: Maven2
-  become: true
   tasks:
     - name: change permissions
       file:
